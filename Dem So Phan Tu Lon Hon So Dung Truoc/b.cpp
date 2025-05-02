@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define MAX 100
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n, a[MAX];
+        scanf("%d", &n);
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &a[i]);
+        }
+
+        int dem = 1;
+        for (int i = 1; i < n; i++) {
+            int c = 1;
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[i]) {
+                    c = 0;
+                    break;
+                }
+            }
+            if (c) dem++;
+        }
+
+        printf("%d\n", dem);
+    }
+    return 0;
+}
